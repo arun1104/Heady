@@ -7,7 +7,7 @@ npm install
 Change configuration variables in .env file.
 
 ## Supported Http versions:
-Only HTTPS
+HTTP
 
 
 ## Default port running:
@@ -15,7 +15,7 @@ Only HTTPS
 
 
 ## Url to access:
-https://localhost:3000/v1
+http://localhost:3000/v1
 
 ## Version of API
 v1
@@ -32,9 +32,5 @@ Postman
 
 ## Design and implementation
 Used mongodb-in-memory npm module to store data in memory.
-It is a simple implementation with very few validations.
-Following things are not taken care of:
-a) Uniqueness while submitting category reponse i.e same user should not submit the category again.
-b) Password encryption at client side and DB side.
-c) Deployment script.
-d) Unit test cases for all files
+It is a simple http nodejs server in express,using hapi/joi for requestbody validation and swagger middleware for routing with very few validations.
+
