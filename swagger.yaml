@@ -1,0 +1,254 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Heady Assignment
+  description: 'CRUD Apis of Products and Categories'
+  contact: {}
+host: 'localhost'
+basePath: /v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /categories:
+    get:
+      tags:
+      - "Categorys"
+      description: 'Get category data'
+      summary: 'To get the details of a category'
+      operationId: 'getCategory'
+      deprecated: false
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: query
+          type: string
+          description: 'category id'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/category"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '404':
+          description: 'Category not found'
+        '500':
+          description: 'Server error'
+    post:
+      tags:
+      - "Categorys"
+      description: 'create a Category'
+      summary: 'Create a Category using metedata and get category Id'
+      operationId: 'createCategory'
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          type: string
+          description: ''
+          default: 'application/json'
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/categories"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/categories"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '500':
+          description: 'Server error'
+    put:
+      tags:
+      - "Categorys"
+      description: 'create a Category'
+      summary: 'Create a Category using metedata and get category Id'
+      operationId: 'updateCategory'
+      parameters:
+        - name: Authorization
+          in: header
+          required: false
+          type: string
+          description: ''
+          default: ''
+        - name: Content-Type
+          in: header
+          required: false
+          type: string
+          description: ''
+          default: 'application/json'
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/categories"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/categories"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '500':
+          description: 'Server error'
+  /products:
+    get:
+      tags:
+      - "Products"
+      description: 'Get Products data'
+      summary: 'To get the details of a category'
+      operationId: 'getProducts'
+      deprecated: false
+      produces:
+        - application/json
+      parameters:
+        - name: category
+          in: query
+          type: string
+          description: 'category name'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/category"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '404':
+          description: 'Category not found'
+        '500':
+          description: 'Server error'
+    post:
+      tags:
+      - "Products"
+      description: 'create a Product'
+      summary: 'Create a Product that belongs to category'
+      operationId: 'createProduct'
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          type: string
+          description: ''
+          default: 'application/json'
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/product"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/categories"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '500':
+          description: 'Server error'
+    put:
+      tags:
+      - "Products"
+      description: 'create a Product'
+      summary: 'Create a Product that belongs to category'
+      operationId: 'updateProduct'
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          type: string
+          description: ''
+          default: 'application/json'
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/updateProduct"
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: "#/definitions/categories"
+        '400':
+          description: 'Bad request'
+          schema:
+            $ref: "#/definitions/errorMessage"
+        '500':
+          description: 'Server error'
+definitions:
+  categories:
+    type: "array"
+    items: 
+       $ref: "#/definitions/category"
+  products:
+    type: "array"
+    items: 
+       $ref: "#/definitions/product"
+  product:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      price:
+        type: "number"
+      priceUnit:
+        type: "string"
+      quantity:
+        type: "string"
+      categories:
+        type: "array"
+        items:
+          type: "string"
+  updateProduct:
+    type: "object"
+    properties:
+      prodId:
+        type: "string"
+      name:
+        type: "string"
+      price:
+        type: "number"
+      priceUnit:
+        type: "string"
+      quantity:
+        type: "string"
+      categories:
+        type: "array"
+        items:
+          type: "string"
+  category:
+    type: "object"
+    properties:
+      _id:
+        type: "string"
+      ancestors:
+        type: "array"
+        items:
+          type: "string"
+      parent:
+        type: "string"
+      children:
+        type: "array"
+        items:
+          type: "string"
+  errorMessage:
+    type: "object"
+    properties:
+      message:
+        type: "string"
