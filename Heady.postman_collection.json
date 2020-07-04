@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "7a86fe07-80f1-40b6-836b-24e3cee96212",
+		"name": "Heady",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/v1/categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   { \"_id\": \"Food\", \"children\": [\"Grain\",\"Vegetables\",\"Fruits\"],\"ancestors\":[] },\r\n   { \"_id\": \"Grain\", \"children\": [\"Rice\",\"Wheat\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Vegetables\", \"children\": [\"Potato\",\"Garlic\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Fruits\", \"children\": [ \"Grapes\", \"Apple\" ],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Rice\", \"children\": [ ],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Wheat\", \"children\": [],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Potato\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Garlic\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Grapes\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] },\r\n   { \"_id\": \"Apple\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products?category=Wheat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kashmir apple\",\r\n    \"categories\": [\r\n        \"Apple\"\r\n    ],\r\n    \"price\": 200,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products?category=Wheat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Wheat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products?category=Rice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kashmir apple\",\r\n    \"categories\": [\r\n        \"Apple\"\r\n    ],\r\n    \"price\": 200,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products?category=Rice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Rice"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products?category=Apple",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kashmir apple\",\r\n    \"categories\": [\r\n        \"Apple\"\r\n    ],\r\n    \"price\": 200,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products?category=Apple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Apple"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products?category=Food",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kashmir apple\",\r\n    \"categories\": [\r\n        \"Apple\"\r\n    ],\r\n    \"price\": 200,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products?category=Food",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Food"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kashmir apple\",\r\n    \"categories\": [\r\n        \"Apple\"\r\n    ],\r\n    \"price\": 200,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Avishkar Atta\",\r\n    \"categories\": [\r\n        \"Wheat\"\r\n    ],\r\n    \"price\": 500,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kolam\",\r\n    \"categories\": [\r\n        \"Rice\"\r\n    ],\r\n    \"price\": 250,\r\n    \"priceUnit\": \"Rs\",\r\n    \"quantity\": \"1 kg\"\r\n}",
+					"options": {
+						"formdata": {},
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   { \"_id\": \"Food\", \"children\": [\"Grain\",\"Vegetables\",\"Fruits\"],\"ancestors\":[] },\r\n   { \"_id\": \"Grain\", \"children\": [\"Rice\",\"Wheat\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Vegetables\", \"children\": [\"Potato\",\"Garlic\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Fruits\", \"children\": [ \"Grapes\", \"Apple\" ],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Rice\", \"children\": [ ],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Wheat\", \"children\": [],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Potato\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Garlic\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Grapes\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] },\r\n   { \"_id\": \"Apple\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/categories?id=Rice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   { \"_id\": \"Food\", \"children\": [\"Grain\",\"Vegetables\",\"Fruits\"],\"ancestors\":[] },\r\n   { \"_id\": \"Grain\", \"children\": [\"Rice\",\"Wheat\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Vegetables\", \"children\": [\"Potato\",\"Garlic\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Fruits\", \"children\": [ \"Grapes\", \"Apple\" ],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Rice\", \"children\": [ ],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Wheat\", \"children\": [],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Potato\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Garlic\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Grapes\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] },\r\n   { \"_id\": \"Apple\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/categories?id=Rice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "Rice"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/v1/categories?id=Food",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   { \"_id\": \"Food\", \"children\": [\"Grain\",\"Vegetables\",\"Fruits\"],\"ancestors\":[] },\r\n   { \"_id\": \"Grain\", \"children\": [\"Rice\",\"Wheat\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Vegetables\", \"children\": [\"Potato\",\"Garlic\"],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Fruits\", \"children\": [ \"Grapes\", \"Apple\" ],\"ancestors\":[\"Food\"] },\r\n   { \"_id\": \"Rice\", \"children\": [ ],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Wheat\", \"children\": [],\"ancestors\":[\"Grain\",\"Food\"] },\r\n   { \"_id\": \"Potato\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Garlic\", \"children\": [],\"ancestors\":[\"Food\",\"Vegetables\"] },\r\n   { \"_id\": \"Grapes\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] },\r\n   { \"_id\": \"Apple\", \"children\": [],\"ancestors\":[\"Food\",\"Fruits\"] }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/v1/categories?id=Food",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"v1",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "Food"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
